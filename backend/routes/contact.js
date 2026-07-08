@@ -2,6 +2,7 @@ import { Router } from "express";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { sendContactNotification } from "../mailer.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const dataFile = path.join(__dirname, "..", "data", "messages.json");
@@ -17,7 +18,6 @@ function saveMessages(messages) {
 
 const router = Router();
 
-// POST /api/contact  { name, email, message }
 router.post("/", (req, res) => {
   const { name, email, message } = req.body || {};
 
@@ -37,14 +37,13 @@ router.post("/", (req, res) => {
   messages.push(entry);
   saveMessages(messages);
 
-  // Hook up nodemailer / a real email provider here if you want
-  // an actual email to land in your inbox instead of a local file.
   console.log("New contact message:", entry);
+
+  sendContactNotification({ name, email, message });
 
   res.status(201).json({ message: "Message received, thanks for reaching out." });
 });
 
-// GET /api/contact  -> list stored messages (handy while developing)
 router.get("/", (req, res) => {
   res.json(readMessages());
 });
