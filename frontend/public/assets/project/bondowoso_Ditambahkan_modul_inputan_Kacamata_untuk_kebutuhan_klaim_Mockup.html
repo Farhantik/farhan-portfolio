@@ -1,0 +1,287 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
+<div class="container mt-4">
+  <div class="card mb-3 d-flex flex-wrap justify-content-start">
+    <div class="card-body bg-light" style="max-height: 1000px; overflow-y: auto;">
+      <div class="  mb-3 align-items-center">
+        <form>
+          <!-- 1 -->
+          <div class="mt-3">
+            <div class="card mb-4 d-flex justify-content">
+              <div class="card col-sm-4 shadow"
+                style="border-radius: 14px; overflow: hidden; position: relative; bottom: 23px">
+                <div class="card-header bg-light-subtle text-center fw-bold">Ditambahkan modul inputan Kacamata untuk
+                  kebutuhan klaim (Mockup)
+
+
+                </div>
+              </div>
+              <div class="form-group row ms-5">
+                <div class="form-group d-flex align-items-center">
+                  <label class="col-sm-2 col-form-label">Tanggal Pemeriksaan</label>
+                  <div class="col d-flex flex-wrap align-items-center" style="gap: 10px">
+                    <div class="col-sm-4" style="margin-left: -35px;"> <!-- Adjusted margin -->
+                      <input type="date" class="form-control" data-field="tanggal_pemeriksaan" placeholder="" />
+                    </div>
+                    <div class="d-flex">
+                      <a class="btn btn-sm btn-secondary me-2" href="#!btn-cetak" role="button">
+                        <i class="fa fa-print"></i> Cetak
+                      </a>
+                      <a class="btn btn-sm btn-secondary me-2" href="#!btn-reset" role="button">
+                        <i class="fa fa-rotate-left"></i> Reset
+                      </a>
+                      <a class="btn btn-sm btn-primary me-2" href="#!btn-simpan" role="button">
+                        <i class="fa fa-save"></i> Simpan
+                      </a>
+                      <a class="btn btn-sm btn-danger me-2" href="#!btn-hapus" role="button">
+                        <i class="fa fa-trash"></i> Hapus
+                      </a>
+                      <a class="btn btn-sm btn-info" href="#!btn-history" role="button">
+                        <i class="fa fa-history"></i> History
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="form-group row ms-5">
+                <div class="col-md-5">
+                  <div class="form-group d-flex align-items-center">
+                    <label class="col-sm-4 col-form-label">Kacamata</label>
+                    <div class="col-sm-8 d-flex align-items-center">
+                      <input type="checkbox" class="form-check-input me-2" id="checkbox1"
+                        data-field="kacamata_untuk_jauh" />
+                      <label for="checkbox1" class="form-check-label">UNTUK JAUH</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <div class="form-group d-flex align-items-center">
+                    <div class="col-sm-8 d-flex align-items-center">
+                      <input type="checkbox" class="form-check-input me-2" id="checkbox2"
+                        data-field="kacamata_untuk_dekat" />
+                      <label for="checkbox2" class="form-check-label">UNTUK DEKAT</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row ms-5 mt-3">
+                <div class="col-md-5">
+                  <div class="form-group d-flex align-items-center">
+                    <label class="col-sm-4 col-form-label">Kanan</label>
+                    <div class="col-md-8">
+                      <select class="form-select" data-field="kanan_select">
+                        <option value="" disabled selected>Pilih opsi</option>
+                        <option value="spher">Spher</option>
+                        <option value="cly">Cly</option>
+                        <option value="as">As</option>
+                        <option value="keterangan">Keterangan</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-5">
+                  <div class="form-group d-flex align-items-center">
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" data-field="kanan_text" placeholder="placeholder" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="form-group row ms-5">
+                <div class="col-md-5">
+                  <div class="form-group d-flex align-items-center">
+                    <label class="col-sm-4 col-form-label">Add</label>
+                    <div class="col-sm-8">
+                      <select class="form-select" data-field="add_select">
+                        <option value="" disabled selected>Pilih opsi</option>
+                        <option value="spher">Spher</option>
+                        <option value="cly">Cly</option>
+                        <option value="as">As</option>
+                        <option value="keterangan">Keterangan</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-5">
+                  <div class="form-group d-flex align-items-center">
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" data-field="add_text" placeholder="placeholder" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="form-group row ms-5">
+                <div class="col-md-5">
+                  <div class="form-group d-flex align-items-center">
+                    <label class="col-sm-4 col-form-label">Kiri</label>
+                    <div class="col-sm-8">
+                      <select class="form-select" data-field="kiri_select">
+                        <option value="" disabled selected>Pilih opsi</option>
+                        <option value="spher">Spher</option>
+                        <option value="cly">Cly</option>
+                        <option value="as">As</option>
+                        <option value="keterangan">Keterangan</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-5">
+                  <div class="form-group d-flex align-items-center">
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" data-field="kiri_text" placeholder="placeholder" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+
+              <div class="form-group row ms-5">
+                <div class="col-md-5">
+                  <div class="form-group d-flex align-items-center">
+                    <label class="col-sm-4 col-form-label">Add</label>
+                    <div class="col-sm-8">
+                      <select class="form-select" data-field="add_kiri_select">
+                        <option value="" disabled selected>Pilih opsi</option>
+                        <option value="spher">Spher</option>
+                        <option value="cly">Cly</option>
+                        <option value="as">As</option>
+                        <option value="keterangan">Keterangan</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-5">
+                  <div class="form-group d-flex align-items-center">
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" data-field="add_kiri_text" placeholder="placeholder" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Teks tambahan -->
+              <div class="form-group row md-8 mt-2 ms-5">
+                <div class="col-md-12">
+                  <p class="text-muted">*Pilihan dropdown: Spher | Cly | As | keterangan</p>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="form-group row ms-5">
+                <div class="col-md-5">
+                  <div class="form-group d-flex align-items-center">
+                    <label class="col-sm-7 col-form-label">Jarak antara kedua pupil</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" data-field="jarak_pupil" placeholder="placeholder" />
+                    </div>
+                    <label class="col-sm-4 col-form-label"> &nbsp; mm</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row ms-5 mt-3">
+                <div class="col-md-5">
+                  <div class="form-group d-flex align-items-center">
+                    <label class="col-sm-7 col-form-label">Pro</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" data-field="pro_text" placeholder="placeholder" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row ms-5 mt-3">
+                <div class="col-md-5">
+                  <div class="form-group d-flex align-items-center">
+                    <label class="col-sm-7 col-form-label">Umur</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" data-field="umur_text" placeholder="placeholder" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <br>
+              <div class="container-fluid my-4">
+                <div class="table-responsive">
+                  <table class="table table-bordered table-hover text-center">
+                    <thead class="thead-light">
+                      <tr>
+                        <th scope="col">Gelas</th>
+                        <th scope="col">Spher</th>
+                        <th scope="col">Cly</th>
+                        <th scope="col">As</th>
+                        <th scope="col">Keterangan</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Kanan</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Add</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Kiri</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>Add</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+
+              <!-- 2 -->
+
+
+
+
+
+
+
+
+
+
+            </div>
+          </div>
+
+
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
