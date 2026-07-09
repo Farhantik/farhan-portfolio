@@ -22,7 +22,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="container hero-grid">
-        <div>
+        <div className="reveal" style={{ "--i": 0 }}>
           <p className="eyebrow">
             // {profile.role.toLowerCase()}
             <span className="cursor" />
@@ -35,7 +35,7 @@ export default function Hero() {
           <p className="hero-text">{profile.tagline}</p>
 
           <div className="hero-actions">
-            <a href={profile.cvUrl} className="btn btn-primary">
+            <a href={profile.cvUrl} className="btn btn-primary btn-bounce">
               <Download size={18} />
               Download CV
             </a>
@@ -60,7 +60,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="code-window">
+        <div className="code-window reveal" style={{ "--i": 1 }}>
           <div className="code-window-bar">
             <span className="dot red" />
             <span className="dot yellow" />
@@ -68,7 +68,7 @@ export default function Hero() {
             <span className="code-window-filename">hero.jsx</span>
           </div>
           <div className="code-window-body">
-            <img className="avatar-photo" src={profile.photo} alt={profile.name} />
+            <img className="avatar-photo avatar-bounce" src={profile.photo} alt={profile.name} />
             {stack.map((tech, i) => (
               <span
                 key={tech}

@@ -10,11 +10,11 @@ export default function WorkPage() {
   return (
     <section className="work-page">
       <div className="container">
-        <p className="section-eyebrow">// featured projects</p>
+        <p className="section-eyebrow reveal">// featured projects</p>
 
         <div className="work-featured">
-          {featuredWork.map((project) => (
-            <article className="work-card" key={project.title}>
+          {featuredWork.map((project, i) => (
+            <article className="work-card reveal" style={{ "--i": i }} key={project.title}>
               <div className="work-thumbs">
                 {project.thumbs.map((thumb) => (
                   <img key={thumb} src={thumb} alt={project.title} />
@@ -38,12 +38,12 @@ export default function WorkPage() {
           ))}
         </div>
 
-        <p className="section-eyebrow">// applications built</p>
+        <p className="section-eyebrow reveal">// applications built</p>
         <div className="app-projects">
-          {appProjects.map((proj) => {
+          {appProjects.map((proj, i) => {
             const Icon = iconMap[proj.icon];
             return (
-              <article className="app-project-card" key={proj.title}>
+              <article className="app-project-card reveal" style={{ "--i": i }} key={proj.title}>
                 {proj.image && (
                   <img className="app-project-image" src={proj.image} alt={`${proj.title} screenshot`} />
                 )}
@@ -64,10 +64,10 @@ export default function WorkPage() {
           })}
         </div>
 
-        <p className="section-eyebrow">// more work</p>
+        <p className="section-eyebrow reveal">// more work</p>
         <div className="work-gallery">
-          {moreWork.map((thumb) => (
-            <img key={thumb} src={thumb} alt="Project screenshot" />
+          {moreWork.map((thumb, i) => (
+            <img className="reveal" style={{ "--i": i }} key={thumb} src={thumb} alt="Project screenshot" />
           ))}
         </div>
       </div>

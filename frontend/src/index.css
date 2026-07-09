@@ -821,3 +821,276 @@ button {
     animation: none;
   }
 }
+
+/* =========================================================
+   Playful animation system
+   ========================================================= */
+
+/* ---------- Page transition ---------- */
+
+.page-transition {
+  animation: pageIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Scroll reveal ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(0.98);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ---------- Playful keyframes ---------- */
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.9);
+  }
+  40% {
+    transform: scale(1.06);
+  }
+  70% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-8deg);
+  }
+  75% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes popPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes avatarBounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+@keyframes dotPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(79, 209, 197, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(79, 209, 197, 0);
+  }
+}
+
+/* ---------- Buttons: playful bounce ---------- */
+
+.btn-bounce:hover {
+  animation: bounceIn 0.5s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: scale(0.95) translateY(0);
+}
+
+/* ---------- Logo wiggle ---------- */
+
+.logo-wiggle:hover {
+  display: inline-block;
+  animation: wiggle 0.4s ease;
+}
+
+/* ---------- Nav links playful underline ---------- */
+
+.nav-links a {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  transform: translateY(-2px);
+}
+
+/* ---------- Social icons: bounce + wiggle ---------- */
+
+.social-btn:hover {
+  transform: translateY(-4px) scale(1.12) rotate(-6deg);
+}
+
+.social-btn:active {
+  transform: scale(0.92);
+}
+
+/* ---------- Hero avatar: idle bounce ---------- */
+
+.avatar-bounce {
+  animation: avatarBounce 3.5s ease-in-out infinite;
+}
+
+.avatar-bounce:hover {
+  animation-play-state: paused;
+  transform: scale(1.06) rotate(-2deg);
+  transition: transform 0.3s ease;
+}
+
+/* ---------- Chips: keep float, add hover pop ---------- */
+
+.chip:hover {
+  animation-play-state: paused;
+  transform: scale(1.15) rotate(-3deg);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---------- Skill cards: wiggle + lift ---------- */
+
+.skill-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-6px) rotate(-2deg) scale(1.04);
+}
+
+.skill-card:hover img {
+  animation: wiggle 0.5s ease;
+}
+
+/* ---------- Stat values: pop on hover ---------- */
+
+.stat:hover .stat-value {
+  animation: popPulse 0.5s ease;
+  color: var(--accent);
+}
+
+/* ---------- Timeline dots: pulse ---------- */
+
+.timeline-dot {
+  animation: dotPulse 2.2s ease-in-out infinite;
+}
+
+/* ---------- Education / app project cards: lift + tilt ---------- */
+
+.education-card,
+.app-project-card {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.education-card:hover,
+.app-project-card:hover {
+  transform: translateY(-6px) rotate(-0.5deg);
+  border-color: var(--accent);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.app-project-card:hover .app-project-icon {
+  animation: wiggle 0.5s ease;
+  color: var(--accent);
+}
+
+/* ---------- Work cards: playful lift ---------- */
+
+.work-card {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+}
+
+.work-thumbs img {
+  transition: transform 0.25s ease;
+}
+
+.work-card:hover .work-thumbs img:nth-child(1) {
+  transform: rotate(-2deg) scale(1.03);
+}
+
+.work-card:hover .work-thumbs img:nth-child(2) {
+  transform: rotate(2deg) scale(1.03);
+}
+
+.work-gallery img:hover {
+  transform: translateY(-6px) rotate(-2deg) scale(1.04);
+}
+
+/* ---------- Tech badges: pop ---------- */
+
+.tech-badge {
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.tech-badge:hover {
+  transform: scale(1.08) translateY(-2px);
+  background: rgba(79, 209, 197, 0.2);
+}
+
+/* ---------- Contact form: playful focus ---------- */
+
+.contact-form input,
+.contact-form textarea {
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(79, 209, 197, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .page-transition,
+  .avatar-bounce,
+  .timeline-dot,
+  .btn-bounce:hover,
+  .logo-wiggle:hover,
+  .skill-card:hover img,
+  .app-project-card:hover .app-project-icon {
+    animation: none;
+  }
+}

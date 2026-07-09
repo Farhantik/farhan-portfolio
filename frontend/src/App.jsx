@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
 import Stats from "./components/Stats.jsx";
@@ -8,6 +8,7 @@ import ContactPage from "./pages/ContactPage.jsx";
 import ResumePage from "./pages/ResumePage.jsx";
 import WorkPage from "./pages/WorkPage.jsx";
 import PlaceholderPage from "./pages/PlaceholderPage.jsx";
+import useScrollReveal from "./hooks/useScrollReveal.js";
 
 function Home() {
   return (
@@ -20,11 +21,14 @@ function Home() {
 }
 
 export default function App() {
+  const location = useLocation();
+  useScrollReveal();
+
   return (
     <>
       <Navbar />
-      <main>
-        <Routes>
+      <main key={location.pathname} className="page-transition">
+        <Routes location={location}>
           <Route path="/" element={<Home />} />
           <Route
             path="/services"

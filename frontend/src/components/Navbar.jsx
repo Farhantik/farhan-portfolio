@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <div className="navbar-inner">
-        <NavLink to="/" className="logo" onClick={() => setOpen(false)}>
+        <NavLink to="/" className="logo logo-wiggle" onClick={() => setOpen(false)}>
           {profile.logo.replace(".", "")}
           <span>.</span>
         </NavLink>
@@ -31,7 +31,7 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        <NavLink to="/contact" className="btn btn-primary">
+        <NavLink to="/contact" className="btn btn-primary btn-bounce">
           Hire me
         </NavLink>
 

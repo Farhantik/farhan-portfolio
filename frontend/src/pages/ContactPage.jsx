@@ -44,7 +44,7 @@ export default function ContactPage() {
 
   return (
     <section className="placeholder-page">
-      <div className="container">
+      <div className="container reveal">
         <h1>Get in touch</h1>
         <p>Send a message and it'll open a WhatsApp chat with me.</p>
         <p className="form-subnote">I usually reply within 24 hours.</p>
@@ -82,7 +82,7 @@ export default function ContactPage() {
 
           <button
             type="submit"
-            className="btn btn-primary"
+            className="btn btn-primary btn-bounce"
             disabled={status === "opening"}
           >
             {status === "opening" ? "Opening WhatsApp..." : "Chat via WhatsApp"}
