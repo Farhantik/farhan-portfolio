@@ -795,6 +795,10 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .hero {
+    padding-top: max(clamp(3rem, 8vw, 6rem), 5.5rem);
+  }
+
   .nav-links {
     position: absolute;
     top: 100%;

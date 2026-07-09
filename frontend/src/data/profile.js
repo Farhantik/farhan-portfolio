@@ -43,8 +43,8 @@ export const stats = [
 // Shown as floating chips in the hero code-window
 export const stack = [
   { name: "React", icon: "/assets/skills/react.svg" },
-  { name: "Node.js", icon: "/assets/resume/icons/nodejs.svg" },
-  { name: "Laravel", icon: "/assets/resume/icons/laravel.svg" },
+  { name: "Node.js", icon: "/assets/skills/nodejs.svg" },
+  { name: "Laravel", icon: "/assets/skills/laravel.svg" },
   { name: "PHP", icon: "/assets/resume/icons/php.svg" },
   { name: "Tailwind", icon: "/assets/skills/tailwind.svg" },
 ];
