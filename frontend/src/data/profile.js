@@ -21,6 +21,7 @@ export const profile = {
 
 export const navLinks = [
   { label: "home", to: "/" },
+  { label: "services", to: "/services" },
   { label: "resume", to: "/resume" },
   { label: "work", to: "/work" },
   { label: "contact", to: "/contact" },
@@ -29,9 +30,8 @@ export const navLinks = [
 export const socials = [
   { label: "Instagram", icon: "instagram", href: "https://www.instagram.com/farhan_bimaz/" },
   { label: "Email", icon: "mail", href: "mailto:farhanabimayuf@gmail.com" },
-  // Add real links once you have them:
-  { label: "GitHub", icon: "github", href: "https://github.com/" },
-  { label: "LinkedIn", icon: "linkedin", href: "https://linkedin.com/" },
+  { label: "GitHub", icon: "github", href: "https://github.com/Farhantik" },
+  { label: "LinkedIn", icon: "linkedin", href: "https://www.linkedin.com/in/farhan-bima-547ba4212/" },
 ];
 
 export const stats = [
