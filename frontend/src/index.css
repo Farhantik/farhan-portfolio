@@ -832,6 +832,27 @@ button {
   }
 }
 
+@media (max-width: 640px) {
+  .code-window-body {
+    flex-direction: column;
+    padding: 2.25rem 1.25rem 1.75rem;
+  }
+
+  .chip-row {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .chip {
+    position: static !important;
+    animation: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .chip,
   .cursor {

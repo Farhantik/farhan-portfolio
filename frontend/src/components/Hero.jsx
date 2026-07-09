@@ -69,20 +69,22 @@ export default function Hero() {
           </div>
           <div className="code-window-body">
             <img className="avatar-photo avatar-bounce" src={profile.photo} alt={profile.name} />
-            {stack.map((tech, i) => (
-              <span
-                key={tech.name}
-                className="chip"
-                style={{ ...chipPositions[i % chipPositions.length], animationDelay: chipPositions[i % chipPositions.length].delay }}
-              >
-                {tech.icon ? (
-                  <img src={tech.icon} alt="" aria-hidden="true" className="chip-icon" />
-                ) : (
-                  <Code2 size={13} className="chip-icon chip-icon-fallback" aria-hidden="true" />
-                )}
-                {tech.name}
-              </span>
-            ))}
+            <div className="chip-row">
+              {stack.map((tech, i) => (
+                <span
+                  key={tech.name}
+                  className="chip"
+                  style={{ ...chipPositions[i % chipPositions.length], animationDelay: chipPositions[i % chipPositions.length].delay }}
+                >
+                  {tech.icon ? (
+                    <img src={tech.icon} alt="" aria-hidden="true" className="chip-icon" />
+                  ) : (
+                    <Code2 size={13} className="chip-icon chip-icon-fallback" aria-hidden="true" />
+                  )}
+                  {tech.name}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
