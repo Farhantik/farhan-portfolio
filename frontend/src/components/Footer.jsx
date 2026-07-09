@@ -7,7 +7,7 @@ export default function Footer() {
         <span>
           {profile.logo} &copy; {new Date().getFullYear()}
         </span>
-        <span>Built with React + Node.js</span>
+
       </div>
     </footer>
   );
