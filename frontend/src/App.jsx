@@ -26,6 +26,13 @@ export default function App() {
 
   return (
     <>
+      <div className="bg-decor" aria-hidden="true">
+        <span className="bg-grid" />
+        <span className="blob blob-1" />
+        <span className="blob blob-2" />
+        <span className="blob blob-3" />
+      </div>
+
       <Navbar />
       <main key={location.pathname} className="page-transition">
         <Routes location={location}>
