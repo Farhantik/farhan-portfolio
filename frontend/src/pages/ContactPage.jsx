@@ -1,15 +1,15 @@
 import { useState } from "react";
+import { profile } from "../data/profile.js";
 
 const WHATSAPP_NUMBER = "6281336052078"; // +62 813-3605-2078
 const MAX_MESSAGE_LENGTH = 500;
 
 function buildWhatsAppUrl({ name, email, message }) {
   const lines = [
-    "Halo Farhan! 👋",
-    `Nama: ${name}`,
+    `Halo Farhan, perkenalkan saya ${name}.`,
     email ? `Email: ${email}` : null,
     "",
-    `Pesan: ${message}`,
+    message,
   ].filter((line) => line !== null);
 
   const text = lines.join("\n");
@@ -26,6 +26,7 @@ export default function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (status === "opening") return;
 
     const url = buildWhatsAppUrl(form);
     setStatus("opening");
@@ -33,10 +34,12 @@ export default function ContactPage() {
 
     const win = window.open(url, "_blank", "noopener,noreferrer");
 
-    // If the popup was blocked, `win` will be null/undefined.
     if (win) {
       setForm({ name: "", email: "", message: "" });
     }
+
+    // Re-enable the button shortly after, in case the user needs to send another message.
+    setTimeout(() => setStatus("idle"), 2000);
   };
 
   return (
@@ -44,6 +47,8 @@ export default function ContactPage() {
       <div className="container">
         <h1>Get in touch</h1>
         <p>Send a message and it'll open a WhatsApp chat with me.</p>
+        <p className="form-subnote">I usually reply within 24 hours.</p>
+
         <form className="contact-form" onSubmit={handleSubmit}>
           <input
             type="text"
@@ -60,29 +65,45 @@ export default function ContactPage() {
             value={form.email}
             onChange={handleChange}
           />
-          <textarea
-            name="message"
-            placeholder="Your message"
-            rows={5}
-            maxLength={MAX_MESSAGE_LENGTH}
-            value={form.message}
-            onChange={handleChange}
-            required
-          />
-          <button type="submit" className="btn btn-primary">
-            Send via WhatsApp
+          <div className="textarea-wrapper">
+            <textarea
+              name="message"
+              placeholder="Your message"
+              rows={5}
+              maxLength={MAX_MESSAGE_LENGTH}
+              value={form.message}
+              onChange={handleChange}
+              required
+            />
+            <span className="char-counter">
+              {form.message.length}/{MAX_MESSAGE_LENGTH}
+            </span>
+          </div>
+
+          <button
+            type="submit"
+            className="btn btn-primary"
+            disabled={status === "opening"}
+          >
+            {status === "opening" ? "Opening WhatsApp..." : "Chat via WhatsApp"}
           </button>
 
-          {status === "opening" && (
+          {status === "opening" && fallbackUrl && (
             <p className="form-status">
-              Membuka WhatsApp...{" "}
-              {fallbackUrl && (
-                <a href={fallbackUrl} target="_blank" rel="noreferrer">
-                  Belum terbuka? Klik di sini
-                </a>
-              )}
+              Didn't open?{" "}
+              <a href={fallbackUrl} target="_blank" rel="noreferrer">
+                Click here
+              </a>
             </p>
           )}
+
+          <p className="form-subnote">
+            Prefer email? Reach me at{" "}
+            <a href={`mailto:${profile.email}`}>{profile.email}</a>.
+          </p>
+          <p className="form-privacy-note">
+            This message is sent directly to WhatsApp — it isn't stored on any server.
+          </p>
         </form>
       </div>
     </section>
