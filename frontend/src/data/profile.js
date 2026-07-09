@@ -132,7 +132,7 @@ export const featuredWork = [
     title: "Bondowoso hospital records module",
     description:
       "Print-ready medical record forms for a hospital information system: cytology results, histopathology requests, and a claims module for eyewear.",
-    thumbs: ["/assets/work/thumb1.png", "/assets/work/thumb2.png"],
+    thumbs: ["/assets/work/thumb10.png", "/assets/work/thumb11.png"],
     docs: [
       { label: "Cytology fluid exam result", href: "/assets/project/bondowoso_Hasil_Pemeriksaan_Sitologi.html" },
       { label: "Histopathology request form", href: "/assets/project/bondowoso_PERMINTAAN_HISTOPATOLOGI.html" },
@@ -143,7 +143,7 @@ export const featuredWork = [
     title: "Karawang hospital records module",
     description:
       "Print templates covering general record forms and ICU discharge criteria for a regional hospital's records system.",
-    thumbs: ["/assets/work/thumb3.png", "/assets/work/thumb4.png"],
+    thumbs: ["/assets/work/thumb7.png", "/assets/work/thumb4.png"],
     docs: [
       { label: "RM-R1-15 print form", href: "/assets/project/Karawang_RM-R1-15_Cetak.html" },
       { label: "ICU discharge criteria (RM.P.KRITIS-03D)", href: "/assets/project/Karawang_RM.P.KRITIS-03D_Cetak_kriteria_Keluar_ICU.html" },
