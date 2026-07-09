@@ -21,7 +21,6 @@ export const profile = {
 
 export const navLinks = [
   { label: "home", to: "/" },
-  { label: "services", to: "/services" },
   { label: "resume", to: "/resume" },
   { label: "work", to: "/work" },
   { label: "contact", to: "/contact" },
