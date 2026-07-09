@@ -252,7 +252,7 @@ button {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 16px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
 }
 
@@ -263,6 +263,7 @@ button {
   padding: 0.7rem 1rem;
   background: var(--surface-2);
   border-bottom: 1px solid var(--border);
+  border-radius: 16px 16px 0 0;
 }
 
 .dot {
@@ -298,6 +299,8 @@ button {
   justify-content: center;
   min-height: 320px;
   background: radial-gradient(circle at 30% 20%, rgba(79, 209, 197, 0.12), transparent 60%);
+  border-radius: 0 0 16px 16px;
+  overflow: visible;
 }
 
 .avatar-photo {
