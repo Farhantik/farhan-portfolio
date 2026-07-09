@@ -28,7 +28,7 @@ export const navLinks = [
 
 export const socials = [
   { label: "Instagram", icon: "instagram", href: "https://www.instagram.com/farhan_bimaz/" },
-  { label: "Email", icon: "mail", href: "mailto:farhanabimayuf@gmail.com" },
+  { label: "Email", icon: "mail", href: "https://mail.google.com/mail/?view=cm&fs=1&to=farhanabimayuf@gmail.com" },
   { label: "GitHub", icon: "github", href: "https://github.com/Farhantik" },
   { label: "LinkedIn", icon: "linkedin", href: "https://www.linkedin.com/in/farhan-bima-547ba4212/" },
 ];
