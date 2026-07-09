@@ -1,36 +1,27 @@
 import { useState } from "react";
 
+const WHATSAPP_NUMBER = "6281336052078"; // +62 813-3605-2078
+
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState(null);
 
-  const handleChange = (e) => {
+  const handleChange = (e) =>
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
-  };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus("sending");
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error("Request failed");
-      setStatus("sent");
-      setForm({ name: "", email: "", message: "" });
-    } catch {
-      setStatus("error");
-    }
+
+    const text = `Halo Farhan, saya ${form.name} (${form.email}).\n\n${form.message}`;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
     <section className="placeholder-page">
       <div className="container">
         <h1>Get in touch</h1>
-        <p>Send a message and it'll land straight in the Node.js API.</p>
-
+        <p>Send a message and it'll open a WhatsApp chat with me.</p>
         <form className="contact-form" onSubmit={handleSubmit}>
           <input
             type="text"
@@ -56,16 +47,9 @@ export default function ContactPage() {
             onChange={handleChange}
             required
           />
-          <button type="submit" className="btn btn-primary" disabled={status === "sending"}>
-            {status === "sending" ? "Sending..." : "Send message"}
+          <button type="submit" className="btn btn-primary">
+            Send via WhatsApp
           </button>
-
-          {status === "sent" && <p className="form-status">Message sent, thanks!</p>}
-          {status === "error" && (
-            <p className="form-status" style={{ color: "#ff6b6b" }}>
-              Something went wrong. Is the backend running?
-            </p>
-          )}
         </form>
       </div>
     </section>
