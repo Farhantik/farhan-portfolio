@@ -323,6 +323,20 @@ button {
   border: 1px solid var(--border);
   color: var(--text-muted);
   animation: float 5s ease-in-out infinite;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.chip-icon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.chip-icon-fallback {
+  color: var(--text-muted);
 }
 
 @keyframes float {

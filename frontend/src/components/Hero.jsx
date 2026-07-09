@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Instagram, Mail, Download } from "lucide-react";
+import { Github, Linkedin, Twitter, Instagram, Mail, Download, Code2 } from "lucide-react";
 import { profile, socials, stack } from "../data/profile.js";
 
 const iconMap = {
@@ -71,11 +71,16 @@ export default function Hero() {
             <img className="avatar-photo avatar-bounce" src={profile.photo} alt={profile.name} />
             {stack.map((tech, i) => (
               <span
-                key={tech}
+                key={tech.name}
                 className="chip"
                 style={{ ...chipPositions[i % chipPositions.length], animationDelay: chipPositions[i % chipPositions.length].delay }}
               >
-                {tech}
+                {tech.icon ? (
+                  <img src={tech.icon} alt="" aria-hidden="true" className="chip-icon" />
+                ) : (
+                  <Code2 size={13} className="chip-icon chip-icon-fallback" aria-hidden="true" />
+                )}
+                {tech.name}
               </span>
             ))}
           </div>
