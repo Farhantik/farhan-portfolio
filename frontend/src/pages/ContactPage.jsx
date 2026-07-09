@@ -99,7 +99,13 @@ export default function ContactPage() {
 
           <p className="form-subnote">
             Prefer email? Reach me at{" "}
-            <a href={`mailto:${profile.email}`}>{profile.email}</a>.
+            <a
+              href={`https://mail.google.com/mail/u/0/?fs=1&to=${profile.email}&tf=cm`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {profile.email}
+            </a>.
           </p>
           <p className="form-privacy-note">
             This message is sent directly to WhatsApp — it isn't stored on any server.
