@@ -292,10 +292,16 @@ button {
 }
 
 .code-window-body {
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    padding: 2rem 1.5rem 1.75rem;
-  }
+  position: relative;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  background: radial-gradient(circle at 30% 20%, rgba(79, 209, 197, 0.12), transparent 60%);
+  border-radius: 0 0 16px 16px;
+  overflow: visible;
+}
 
 .avatar-photo {
   width: 220px;
@@ -308,13 +314,19 @@ button {
 }
 
 .chip {
-    position: static !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    animation: none !important;
-  }
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  animation: float 5s ease-in-out infinite;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
 
 .chip-icon {
   width: 14px;
@@ -781,10 +793,6 @@ button {
 @media (max-width: 860px) {
   .hero-grid {
     grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding-top: max(clamp(3rem, 8vw, 6rem), 5.5rem);
   }
 
   .nav-links {
