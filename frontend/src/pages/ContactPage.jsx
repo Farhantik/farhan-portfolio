@@ -1,9 +1,25 @@
 import { useState } from "react";
 
 const WHATSAPP_NUMBER = "6281336052078"; // +62 813-3605-2078
+const MAX_MESSAGE_LENGTH = 500;
+
+function buildWhatsAppUrl({ name, email, message }) {
+  const lines = [
+    "Halo Farhan! 👋",
+    `Nama: ${name}`,
+    email ? `Email: ${email}` : null,
+    "",
+    `Pesan: ${message}`,
+  ].filter((line) => line !== null);
+
+  const text = lines.join("\n");
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+}
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("idle"); // idle | opening
+  const [fallbackUrl, setFallbackUrl] = useState(null);
 
   const handleChange = (e) =>
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
@@ -11,10 +27,16 @@ export default function ContactPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const text = `Halo Farhan, saya ${form.name} (${form.email}).\n\n${form.message}`;
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    const url = buildWhatsAppUrl(form);
+    setStatus("opening");
+    setFallbackUrl(url);
 
-    window.open(url, "_blank", "noopener,noreferrer");
+    const win = window.open(url, "_blank", "noopener,noreferrer");
+
+    // If the popup was blocked, `win` will be null/undefined.
+    if (win) {
+      setForm({ name: "", email: "", message: "" });
+    }
   };
 
   return (
@@ -34,15 +56,15 @@ export default function ContactPage() {
           <input
             type="email"
             name="email"
-            placeholder="Your email"
+            placeholder="Your email (optional)"
             value={form.email}
             onChange={handleChange}
-            required
           />
           <textarea
             name="message"
             placeholder="Your message"
             rows={5}
+            maxLength={MAX_MESSAGE_LENGTH}
             value={form.message}
             onChange={handleChange}
             required
@@ -50,6 +72,17 @@ export default function ContactPage() {
           <button type="submit" className="btn btn-primary">
             Send via WhatsApp
           </button>
+
+          {status === "opening" && (
+            <p className="form-status">
+              Membuka WhatsApp...{" "}
+              {fallbackUrl && (
+                <a href={fallbackUrl} target="_blank" rel="noreferrer">
+                  Belum terbuka? Klik di sini
+                </a>
+              )}
+            </p>
+          )}
         </form>
       </div>
     </section>
