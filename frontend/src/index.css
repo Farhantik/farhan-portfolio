@@ -308,19 +308,13 @@ button {
 }
 
 .chip {
-   position: static !important;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  padding: 0.4rem 0.7rem;
-  border-radius: 8px;
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-  animation: float 5s ease-in-out infinite;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    animation: none !important;
+  }
 
 .chip-icon {
   width: 14px;
