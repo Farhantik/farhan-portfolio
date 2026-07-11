@@ -11,7 +11,7 @@ export const profile = {
   role: "Software developer",
   tagline:
     "Software Developer Intern experience at PT. Evolusi Teknologi Indonesia, with a background leading campus organizations and building web systems from planning to production.",
-  location: "Bojonegoro, East Java, Indonesia",
+  location: "Surabaya, East Java, Indonesia",
   email: "farhanabimayuf@gmail.com",
   cvUrl: "/api/cv",
   photo: "/assets/photo.png",
