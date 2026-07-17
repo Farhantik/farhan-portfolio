@@ -190,4 +190,13 @@ export const appProjects = [
       "Point-of-sale system for small businesses: cashier sessions, transactions with printed and thermal-printer receipts, product/inventory management, supplier and customer records, receivables tracking, and financial reports.",
     tech: ["Laravel 12", "MySQL", "Tailwind CSS", "Vite", "Maatwebsite Excel"],
   },
+  {
+    title: "LekSo Bee",
+    icon: "cookie",
+    image: "/assets/work/leksobee-screenshot.png",
+    link: "https://leksobee.biz.id/",
+    description:
+      "Company profile & catalog site for LekSo Bee, a Bojonegoro UMKM selling eggroll snacks (\"Eggrolls yang Ngangenin\"). Public landing page with product flavors, gallery, and contact, plus an admin panel to manage products, hero/about content, and gallery photos.",
+    tech: ["Laravel 12", "MySQL", "Tailwind CSS", "Blade"],
+  },
 ];
