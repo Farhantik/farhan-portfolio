@@ -1,9 +1,10 @@
-import { FileText, Wallet, ShoppingCart } from "lucide-react";
+import { FileText, Wallet, ShoppingCart, Cookie, ExternalLink } from "lucide-react";
 import { featuredWork, moreWork, appProjects } from "../data/profile.js";
 
 const iconMap = {
   wallet: Wallet,
   "shopping-cart": ShoppingCart,
+  cookie: Cookie,
 };
 
 export default function WorkPage() {
@@ -59,18 +60,30 @@ export default function WorkPage() {
                     </span>
                   ))}
                 </div>
-              </article>
-            );
-          })}
-        </div>
+                {proj.link && (
 
-        <p className="section-eyebrow reveal">// more work</p>
-        <div className="work-gallery">
-          {moreWork.map((thumb, i) => (
-            <img className="reveal" style={{ "--i": i }} key={thumb} src={thumb} alt="Project screenshot" />
-          ))}
-        </div>
+                  className = "app-project-link"
+                    href={proj.link}
+                target="_blank"
+                rel="noreferrer"
+                  >
+                <ExternalLink size={14} aria-hidden="true" />
+                Visit site
+              </a>
+            )
+          }
+              </article>
+        );
+          })}
       </div>
-    </section>
+
+      <p className="section-eyebrow reveal">// more work</p>
+      <div className="work-gallery">
+        {moreWork.map((thumb, i) => (
+          <img className="reveal" style={{ "--i": i }} key={thumb} src={thumb} alt="Project screenshot" />
+        ))}
+      </div>
+    </div>
+    </section >
   );
 }

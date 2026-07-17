@@ -688,6 +688,22 @@ button {
   margin: 0 0 1rem;
 }
 
+.app-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  text-decoration: none;
+}
+
+.app-project-link:hover {
+  text-decoration: underline;
+}
+
 .tech-badges {
   display: flex;
   flex-wrap: wrap;
