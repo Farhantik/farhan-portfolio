@@ -61,29 +61,28 @@ export default function WorkPage() {
                   ))}
                 </div>
                 {proj.link && (
-
-                  className = "app-project-link"
+                  <a
+                    className="app-project-link"
                     href={proj.link}
-                target="_blank"
-                rel="noreferrer"
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                <ExternalLink size={14} aria-hidden="true" />
-                Visit site
-              </a>
-            )
-          }
+                    <ExternalLink size={14} aria-hidden="true" />
+                    Visit site
+                  </a>
+                )}
               </article>
-        );
+            );
           })}
-      </div>
+        </div>
 
-      <p className="section-eyebrow reveal">// more work</p>
-      <div className="work-gallery">
-        {moreWork.map((thumb, i) => (
-          <img className="reveal" style={{ "--i": i }} key={thumb} src={thumb} alt="Project screenshot" />
-        ))}
+        <p className="section-eyebrow reveal">// more work</p>
+        <div className="work-gallery">
+          {moreWork.map((thumb, i) => (
+            <img className="reveal" style={{ "--i": i }} key={thumb} src={thumb} alt="Project screenshot" />
+          ))}
+        </div>
       </div>
-    </div>
-    </section >
+    </section>
   );
 }
